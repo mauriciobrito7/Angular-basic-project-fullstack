@@ -1,0 +1,46 @@
+@import '~assets/scss/_config';
+.nav{
+    /*Main styles*/
+    width: 100%;
+    padding: $gutter;
+    background: color(black);
+    color: color(primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*shadow*/
+    @include box_shadow(2);
+    @include desde($large){
+        height: 100%;
+        flex-direction: column;
+    }
+    &-brand{
+        width: 50%;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        @include desde($large){
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 20%;
+            justify-content: center;
+        }
+    }
+    &-list{
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        @include desde($large){
+            flex-wrap: wrap;
+            width: 100%;
+            height: 80%;
+            justify-content: center;
+            align-items:flex-start;
+        }
+        li{
+            display: inline-block;
+        }
+    }
+}

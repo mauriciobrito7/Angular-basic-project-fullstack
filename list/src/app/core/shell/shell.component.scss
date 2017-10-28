@@ -1,0 +1,31 @@
+@import '~assets/scss/_config';
+.main{
+    /*Ayuda a dejar el footer abajo siempre*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+app-main-content , app-footer{
+    position: relative;
+    top:$gutter *5.2;
+    @include desde($large){
+        top:0;
+        margin-left: $gutter*5 !important;
+    }
+}
+app-nav-bar{
+    /*ToolBar sticky*/
+    position: fixed;
+    z-index: 400;
+    width: 100%;
+    top:0;
+    @include desde($large){
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: $gutter *5;
+    }
+}
+app-footer{
+    margin-top: auto !important;
+}

@@ -1,0 +1,18 @@
+<div class="main-title">
+    <h3 >Inventario</h3>
+  </div>
+<main class="main">
+    <!--app-nuevo ingresa datos en cualquier componente que consuma el servicio courses
+    se le puede pasar cualquier tipo de nodo y en el metodo guardar se envia a lista donde se quiere guardar
+    -->
+    <app-nuevo
+    [nodo]="newCourse"
+    (guardar)="saveCourse()"
+    ></app-nuevo>
+    <!--Dos listas diferentes que reaccionan a los cambios-->
+    <app-lista
+    [lista]="cursos"
+    ></app-lista>
+
+    <app-courses-list></app-courses-list>
+</main>

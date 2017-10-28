@@ -1,0 +1,99 @@
+//Estilos, funciones, variables para los estilos
+
+//Variables
+$thin:100;
+$light:300;
+$normal:400;
+$medium:500;
+$bold:700;
+//Gutter
+$gutter:1em;
+
+//Importar tipografia
+//Roboto Medium para los titulos
+/*
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: $normal;
+    src: url('~/../fonts/Roboto-Medium.ttf');
+ }
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$font-text:'Roboto' sans-serif;
+
+//Mixin para media queries
+@mixin desde($size){
+	@media screen and (min-width:$size){
+		@content;
+	}
+}
+//Breakpoints
+$small:480px;
+$medium:768px;
+$large:1025px;
+$x-large:1400px;
+
+//Convertir px a em
+@function em($el, $parent: 16px){
+	@return ($el/$parent)*1em;
+}
+
+//Convertir px a rem
+@function rem($el, $parent: 16px){
+	@return ($el/$parent)*1rem;
+}
+
+$font-size:em(16px);
+$h3-size: $font-size * 1.15;
+$h2-size: $font-size * 1.35;
+$h1-size: $font-size * 1.7;
+
+//Sombras para los contenedores
+@mixin box_shadow ($level) {
+
+    @if $level == 1 {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    } @else if $level == 2 {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    } @else if $level == 3 {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    } @else if $level == 4 {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    } @else if $level == 5 {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+}
+
+//Estilos de componentes
+@mixin card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: color(white);
+    @include box_shadow(1);
+    @include desde($large){
+        border-radius: $gutter *.2;
+    }
+}
+@mixin card-content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $gutter;
+}
+//Colores
+$colors:(
+    special: #FFD200,
+    background:#37484B,
+    white: #ffffff,
+    black: #212121,
+    grey: #f0f0f0,
+    primary: #00A2E1,
+    second:#004A88
+);
+
+@function color($color){
+	@return map-get($colors,$color);
+}

@@ -1,0 +1,16 @@
+@import '~assets/scss/_config';
+.list{
+    background: color(white);
+    max-width: $large;
+    margin: $gutter $gutter !important;
+    @include desde($large){
+        margin: $gutter auto !important;
+    }
+    /*card*/
+    @include card;
+}
+mat-selection-list{
+    mat-list-option .title{
+    font-weight: bold;
+    }
+}
