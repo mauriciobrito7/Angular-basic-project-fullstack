@@ -1,7 +1,7 @@
 <div class="list">
   <mat-selection-list #coursesSelectives>
-    <mat-list-option mat-line *ngFor="let course of courses"><span class="title">{{course.title}}</span>
-      <p mat-line></p>
+    <mat-list-option mat-line *ngFor="let course of courses"><span class="title">{{course.id}}</span>
+      <p mat-line>{{course.text}}</p>
     </mat-list-option>
     <p>
         Opcciones seleccionadas: {{coursesSelectives.selectedOptions.selected.length}}

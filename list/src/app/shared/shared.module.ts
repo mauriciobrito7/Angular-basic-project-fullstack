@@ -1,6 +1,8 @@
+import { HttpToolsService } from './services/http-tools.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseService } from './services/course.service';
+import { HttpModule } from '@angular/http';
 import {
   MatButtonModule, MatIconModule, MatListModule, MatToolbarModule, MatCardModule,  MatTableModule, MatInputModule
 } from '@angular/material';
@@ -14,7 +16,8 @@ import {
     MatToolbarModule,
     MatCardModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    HttpModule
   ],
   declarations: [],
   exports: [ MatButtonModule,
@@ -23,7 +26,8 @@ import {
     MatToolbarModule,
     MatCardModule,
     MatTableModule,
-    MatInputModule]
+    MatInputModule],
+    providers: []
 })
 export class SharedModule {
 
@@ -32,7 +36,8 @@ export class SharedModule {
       return {
         ngModule: SharedModule,
         providers: [
-          CourseService
+          CourseService,
+          HttpToolsService
         ]
       };
     }

@@ -3,7 +3,7 @@
 const client = require('mongodb').MongoClient
 const ObjectID = require('mongodb').ObjectID
 /** Cadena de conexión, falta seguridad y obtenerla desde un config */
-const url = 'mongodb://localhost:27017/cashflow'
+const url = 'mongodb://localhost:27017 '
 
 /**
  * Operaciones básicas con MongoDB
@@ -63,7 +63,7 @@ function updating(colName, query, id, document) {
         if(id) query._id = new ObjectID(id)
         this.colConnecting(colName)
             .then(colDb => colDb.update(query, document, (err, result) => err ? reject(err) : resolve(result)))
-            .catch(err => reject(err))
+            .catch(err => reject(err)) 
     })
 }
 

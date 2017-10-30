@@ -22,8 +22,8 @@ function usarSeguridad(app, ruta) {
     app.use(ruta, (req, res, next) => {
         // la validación de la sesión es en memoria
         // jwt descifra y valida un token
-        let sessionId = req.get('sessionId')
-        let sesion = jwt.verify(sessionId)
+        let sessionId = req.get('sessionId');
+        let sesion = jwt.verify(sessionId);
         if (sesion) {
             req.usuario = sesion.email
             next()

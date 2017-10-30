@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'about',
     loadChildren: './../about/about.module#AboutModule'
   },
+  {
+    path: 'security',
+    loadChildren: './../security/security.module#SecurityModule'
+  }
 ];
 
 @NgModule({

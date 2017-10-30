@@ -18,8 +18,8 @@ export class CoursesListComponent implements OnInit {
 
   ngOnInit() {
     this.courses$ = this.courseService.getCourses$();
-    this.courses$.subscribe(d =>
-      this.courses = this.courseService.getCourses()
+    this.courses$.subscribe(courses =>
+      this.courses = courses
     );
   }
 

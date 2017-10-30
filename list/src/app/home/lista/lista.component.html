@@ -1,6 +1,6 @@
 <mat-selection-list #coursesSelectives>
-    <mat-list-option mat-line *ngFor="let item of lista"><span class="title">{{item.title}}</span>
-      <p mat-line></p>
+    <mat-list-option mat-line *ngFor="let item of lista | async"><span class="title">{{item._id}}</span>
+      <p mat-line>{{item.title}}</p>
     </mat-list-option>
     <p>
         Opcciones seleccionadas: {{coursesSelectives.selectedOptions.selected.length}}
